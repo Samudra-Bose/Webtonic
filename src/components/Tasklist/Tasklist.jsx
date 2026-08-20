@@ -1,10 +1,12 @@
 import React from 'react'
+import AcceptTask from './AcceptTask'
 
-const Tasklist = () => {
+const Tasklist = ({data}) => {
   return (
     <div id='tasklist' className='flex flex-nowrap overflow-x-auto items-center justify-start gap-5  h-[55%] w-full mt-10 py-5 '>
         
-        <div className='h-full w-[300px] bg-yellow-500 p-5 rounded-xl shrink-0'>
+        <AcceptTask />
+        <div className='h-full w-[300px] bg-amber-700 p-5 rounded-xl shrink-0'>
 
             <div className='flex justify-between items-center'>
 
@@ -13,7 +15,7 @@ const Tasklist = () => {
 
             </div>
             
-            <h2 className='mt-5 text-2xl font-semibold'>Make a Youtube Video</h2>
+            <h2 className='mt-5 text-2xl font-semibold'>Design a thumbnail fot the YT video</h2>
             <p className='text-sm mt-2 '>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident, totam? Nemo 
             dignissimos perferendis adipisci neque!</p>
 
@@ -27,7 +29,7 @@ const Tasklist = () => {
 
             </div>
             
-            <h2 className='mt-5 text-2xl font-semibold'>Make a Youtube Video</h2>
+            <h2 className='mt-5 text-2xl font-semibold'>Design a thumbnail fot the YT video</h2>
             <p className='text-sm mt-2 '>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident, totam? Nemo 
             dignissimos perferendis adipisci neque!</p>
 

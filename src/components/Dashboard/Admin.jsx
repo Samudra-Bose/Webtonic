@@ -3,9 +3,9 @@ import Header from "../others/Header";
 import CreateTask from "../others/CreateTask";
 import AllTask from "../others/AllTask";
 
-export const Admin = () => {
+export const Admin = ({data}) => {
   return <div className="h-screen w-full p-7 ">
-    <Header />
+    <Header data={data}/>
     <CreateTask />
     <AllTask/>
   </div>
