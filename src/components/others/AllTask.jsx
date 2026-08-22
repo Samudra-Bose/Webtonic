@@ -1,33 +1,45 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { AuthContext } from '../../context/AuthProvider'
 
 const AllTask = () => {
+
+    const authData = useContext(AuthContext)
+
+    console.log(authData)
+
   return (
-    <div className='bg-[#1c1c1c] p-5 mt-5 rounded h-48 overflow-auto'>
+    <div className='bg-[#1c1c1c] p-5 mt-5 rounded h-65 '>
 
-        <div className='bg-blue-600 mb-2 py-2 px-4 flex justify-between rounded-2xl'>
 
-            <h2>Sarthak</h2>
-            <h3>Make a UI Design</h3>
+<div className='bg-pink-300 mb-2 py-2 px-4 flex justify-between rounded-2xl'>
+
+            <h2 className='text-lg font-medium w-1/5 '>Employee Name</h2>
+            <h3 className='text-lg font-medium w-1/5 '>New Task</h3>
+            <h5 className='text-lg font-medium w-1/5 '>Active Task</h5>
+            <h5 className='text-lg font-medium w-1/5 '>Completed</h5>
+            <h5 className='text-lg font-medium w-1/5 '>Failed</h5>
             
         </div>
-        <div className='bg-yellow-600 mb-2 py-2 px-4 flex justify-between rounded-2xl'>
 
-            <h2>Sarthak</h2>
-            <h3>Make a UI Design</h3>
+        <div className='h-[80%] overflow-auto'>
+
+{authData.employees.map((e)=>{
+
+            return<div className='border-emerald-500  mb-2 py-2 px-4 flex border-3 justify-between rounded-2xl'>
+
+            <h2 key={e.id} className='text-lg font-medium w-1/5  text-white'>{e.firstName}</h2>
+            <h3 key={e.id} className='text-lg font-medium w-1/5 text-blue-600 '>{e.taskCounts.newTask} </h3>
+            <h5 key={e.id} className='text-lg font-medium w-1/5 text-yellow-400 '>{e.taskCounts.active}</h5>
+            <h5 key={e.id} className='text-lg font-medium w-1/5 text-white '>{e.taskCounts.completed}</h5>
+            <h5 key={e.id} className='text-lg font-medium w-1/5 text-red-600 '>{e.taskCounts.failed}</h5>
+
             
         </div>
-        <div className='bg-green-600 mb-2 py-2 px-4 flex justify-between rounded-2xl'>
+        })}
 
-            <h2>Sarthak</h2>
-            <h3>Make a UI Design</h3>
-            
         </div>
-        <div className='bg-purple-500 mb-2 py-2 px-4 flex justify-between rounded-2xl'>
 
-            <h2>Sarthak</h2>
-            <h3>Make a UI Design</h3>
-            
-        </div>
+        
     </div>
   )
 }
